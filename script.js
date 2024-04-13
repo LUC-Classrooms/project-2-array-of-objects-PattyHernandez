@@ -1,6 +1,6 @@
 /*
  Project 2 - Array of Objects
- Name: 
+ Name: patty
  Comments: 
  */
 
