@@ -1,26 +1,32 @@
-/*
- Project 2 - Array of Objects
- Name: 
- Comments: 
- */
+/**
+ * Add code for your class constructor in this file
+ */ 
+function Sprite (tempX, tempY) {
 
-/*** 
- * Please see the full assignment instructions in COMP 125 on Sakai (or under the "Markdown" tab)
- * Make an array of objects of the same type. Start by creating an object constructor funciton. Test it with individual object instances. Then create an array and initialize it with objects created from your constructor.
- * Use the draw() function to display and move your objects independently on the canvas.
-***/
+    this.x = tempX; 
+    this.y = tempY;
+    this.xSpeed = random (-2, 2); 
+    this.ySpeed = random (-2, 2);
 
-// Global Variables go here
+    this.move = function (){
+        this.x += this.xspeed;
+        this.y += this.ySpeed;
+        if(this.x > width || this.x < 0 ){
+            this.xSpeed *= -1;
+        }
+        if (this.y > height || this.y < 0) {
+            this.ySpeed *= -1; 
+         }
+        } 
 
-function setup(){
-  // this function will run once
-  createCanvas(600, 400); // create a 600 x 400 pixel drawing canvas
-
-
-}
-
-function draw(){
-  background(200); //light gray background
-  
-}
-
+this.display = function (){
+    push();// create a new layer
+    translate(this.x, this.y) // move the layer orgin point on canvas
+    rectMode(CENTER); // center the rectangle
+    FileList(255,0,0,50); // transparent red
+    rect(0,0,75); // rectangle
+    ellipse(-20, -10 ,5, 10)
+    ellipse(20, -10, 5, 10)
+    pop(); // dispose of the layer
+    }
+} 
